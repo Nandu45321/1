@@ -1,0 +1,4043 @@
+#: import gch kivy.utils.get_color_from_hex
+MyScreenManager:
+    id: MyWindow
+    MainScreen:
+    TriangleWindow:
+    EquilateralTriangleWindow:
+    RightTriangleWindow:
+    IsoscelesTriangleWindow:
+    ScaleneTriangleWindow:
+    QuadrilateralWindow:
+    RectangleWindow:
+    SquareWindow:
+    RhombusWindow:
+    KiteWindow:
+    ParallelogramWindow:
+    TrapeziumWindow:
+    RegularPentagonWindow:
+    RegularHexagonWindow:
+    RegularHeptagonWindow:
+    RegularOctagonWindow:
+    RegularNonagonWindow:
+    RegularDecagonWindow:
+    CubeWindow:
+    CuboidWindow:
+    TriangularPrismWindow:
+    TriangularPyramidWindow:
+    SquarePyramidWindow:
+    RectanglePyramidWindow:
+    PentagonalPyramidWindow:
+    HexagonalPyramidWindow:
+    TetrahedronWindow:
+    
+    OctahedronWindow:
+    DodecahedronWindow:
+    IcosahedronWindow:
+
+<MainScreen>:
+    id: main_screen
+    name: "MainScreen"
+    MyNavigationLayout:
+        id: nav_layout
+        Navigation_ScreenManager:
+            id: screen_manager
+            Screen:
+                name: "mainscreen"
+                BoxLayout:
+                    orientation: 'vertical'
+                    MDTopAppBar:
+                        title: "J.A.N"
+                        elevation: 10
+                        left_action_items: [["menu", lambda x : navigation_drawer.set_state()]]
+                        #left_action_items: [["menu", lambda x : app.root.current]]
+                        #right_action_items: [["history")]]
+                    MDBottomNavigation:
+                        text_color_active: gch("#673AB7")
+                        MDBottomNavigationItem:
+                            text: "2d"
+                            name: "2D screen"
+                            icon: "square-outline"
+                            ScrollView:
+                                do_scroll_x: False
+                                MDList:
+                                    MDLabel:
+                                        text: "  2D shapes:"
+                                        font_size: 15
+                                        font_style: "Subtitle2" 
+                                        theme_text_color: "Hint"
+                                        spacing: 30
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Triangle"
+                                            root.manager.transition.direction = "left"
+                                        text: "Triangle"
+                                        secondary_text: "Base & Height"
+                                        tertiary_text: "Area"
+                                        IconLeftWidget:
+                                            icon: "triangle.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "EquilateralTriangle"
+                                            root.manager.transition.direction = "left"
+                                        text: "Equilateral Triangle"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget
+                                            icon: "triangle-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RightTriangle"
+                                            root.manager.transition.direction = "left"
+                                        text: "Right Triangle"
+                                        secondary_text: "Sides with 90°"
+                                        tertiary_text: "Area, Perimeter & Hypotenuse"
+                                        IconLeftWidget:
+                                            icon: "angle-right"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "IsoscelesTriangle"
+                                            root.manager.transition.direction = "left"
+                                        text: "Isosceles Triangle"
+                                        secondary_text: "Base & Height"
+                                        tertiary_text: "Area,Perimeter & Side"
+                                        IconLeftWidget:
+                                            icon: "isoscelestriangle.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "ScaleneTriangle"
+                                            root.manager.transition.direction = "left"
+                                        text: "Scalene Triangle"
+                                        secondary_text: "Sides"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "scalenetriangle.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Quadrilateral"
+                                            root.manager.transition.direction = "left"
+                                        text: "Quadrilateral"
+                                        secondary_text: "Diagonals"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "quadrilateral.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Rectangle"
+                                            root.manager.transition.direction = "left"
+                                        text: "Rectangle"
+                                        secondary_text: "Lenght & Breadth"
+                                        tertiary_text: "Area, Perimeter & Diagonal"
+                                        IconLeftWidget:
+                                            icon: "rectangle-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Square"
+                                            root.manager.transition.direction = "left"
+                                        text: "Square"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "square-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Rhombus"
+                                            root.manager.transition.direction = "left"
+                                        text: "Rhombus"
+                                        secondary_text: "Diagonals"
+                                        tertiary_text: "Area, Perimeter & Side"
+                                        IconLeftWidget:
+                                            icon: "rhombus-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Kite"
+                                            root.manager.transition.direction = "left"
+                                        text: "Kite"
+                                        secondary_text: "Diagonals & Sides"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget
+                                            icon: "kite.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Parallelogram"
+                                            root.manager.transition.direction = "left"
+                                        text: "Parallelogram"
+                                        secondary_text: "Side, Base & Height"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "parallelogram.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Trapezium"
+                                            root.manager.transition.direction = "left"
+                                        text: "Trapezium"
+                                        secondary_text: "All sides & Height"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "Trapezium.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RegularPentagon"
+                                            root.manager.transition.direction = "left"
+                                        text: "Regular Pentagon"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area, Perimeter & Diagonal"
+                                        IconLeftWidget:
+                                            icon: "pentagon-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RegularHexagon"
+                                            root.manager.transition.direction = "left"
+                                        text: "Regular Hexagon"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "hexagon-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RegularHeptagon"
+                                            root.manager.transition.direction = "left"
+                                        text: "Regular Heptagon"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "Regularheptagon.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RegularOctagon"
+                                            root.manager.transition.direction = "left"
+                                        text:"Regular Octagon"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "octagon-outline"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RegularNonagon"
+                                            root.manager.transition.direction = "left"
+                                        text: "Regular Nonagon"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "Regularnonagon.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "RegularDecagon"
+                                            root.manager.transition.direction = "left"
+                                        text: "Regular Decagon"
+                                        secondary_text: "Side"
+                                        tertiary_text: "Area & Perimeter"
+                                        IconLeftWidget:
+                                            icon: "Regulardecagon.png"
+                                    
+                        MDBottomNavigationItem:
+                            text: "3D"
+                            name: "3D screen"
+                            icon:"cube-outline"
+                            ScrollView:
+                                do_scroll_x: False
+                                MDList:
+                                    MDLabel:
+                                        text: "  3D shapes:"
+                                        font_size: 15
+                                        font_style: "Subtitle2"
+                                        theme_text_color: "Hint"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Cube"
+                                            root.manager.transition.direction = "left"
+                                        text: "Cube"
+                                        secondary_text: "Edge"
+                                        tertiary_text: "Volume, T.S.A, L.S.A & Diagonal"
+                                        IconLeftWidget:
+                                            icon: "Cube.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "Cuboid"
+                                            root.manager.transition.direction = "left"
+                                        text: "Cuboid"
+                                        secondary_text: "Lenght, Breadth, & Height"
+                                        tertiary_text: "Volume, T.S.A & Diagonal"
+                                        IconLeftWidget:
+                                            icon: "Cuboid.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "TriangularPrism"
+                                            root.manager.transition.direction = "left"
+                                        text: "Triangular Prism"
+                                        secondary_text: "Edges & Height"
+                                        tertiary_text: "Volume, T.S.A, L.S.A & Base-Area"
+                                        IconLeftWidget:
+                                            icon: "TriangularPrism.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "TriangularPyramid"
+                                            root.manager.transition.direction = "left"
+                                        text: "Triangular Pyramid"
+                                        secondary_text: "Base-Area, Base-Perimeter, Slant-Height & Height"
+                                        tertiary_text: "Volume, T.S.A, L.S.A"
+                                        IconLeftWidget:
+                                            icon: "TrianglePyramid.png"
+                                    ThreeLineIconListItem:
+                                        on_release:
+                                            app.root.current = "SquarePyramid"
+                                            root.manager.transition.direction = "left"
+                                        text: "Square Pyramid"
+                                        secondary_text: "Edge & Height"
+                                        tertiary_text: "Volume, T.S.A, L.S.A, Base-Area & Face-Area"
+                                        IconLeftWidget:
+                                            icon: "SquarePyramid.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "RectangularPyramid"
+                                            root.manager.transition.direction = "left"
+                                        text: "Rectanglular Pyramid"
+                                        secondary_text: "Edges & Height"
+                                        tertiary_text: "Volume, T.S.A, L.S.A & Base-Area"
+                                        IconLeftWidget:
+                                            icon: "Rectangularpyramid.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "PentagonalPyramid"
+                                            root.manager.transition.direction = "left"
+                                        text: "Pentagonal Pyramid"
+                                        secondary_text: "Edge & Height"
+                                        tertiary_text: "Volume, T.S.A, L.S.A, Base-Area & Face-Area"
+                                        IconLeftWidget:
+                                            icon: "pentagonalpyramid.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "HexagonalPyramid"
+                                            root.manager.transition.direction = "left"
+                                        text: "Hexagonal Pyramid"
+                                        secondary_text: "Edge & Height"
+                                        tertiary_text: "Volume, T.S.A, L.S.A, Base-Area & Face-Area"
+                                        IconLeftWidget:
+                                            icon: "hexagonalpyramid.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "Tetrahedron"
+                                            root.manager.transition.direction = "left"
+                                        text: "Tetrahedron"
+                                        secondary_text: "Edge"
+                                        tertiary_text: "Volume, T.S.A, L.S.A, Face-Area & Height"
+                                        IconLeftWidget:
+                                            icon: "etrahedron.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "Octahedron"
+                                            root.manager.transition.direction = "left"
+                                        text: "Octahedron"
+                                        secondary_text: "Edge"
+                                        tertiary_text: "Volume & T.S.A"
+                                        IconLeftWidget:
+                                            icon: "octahedron.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "Dodecahedron"
+                                            root.manager.transition.direction = "left"
+                                        text: "Dodecahedron"
+                                        secondary_text: "Edge"
+                                        tertiary_text: "Volume & T.S.A"
+                                        IconLeftWidget:
+                                            icon: "dodecahedron.png"
+                                    ThreeLineIconListItem:
+                                        on_release: 
+                                            app.root.current = "Icosahedron"
+                                            root.manager.transition.direction = "left"
+                                        text: "Icosahedron"
+                                        secondary_text: "Edge"
+                                        tertiary_text: "Volume & T.S.A"
+                                        IconLeftWidget:
+                                            icon: "icosahedron.png"
+                                    
+
+
+            Screen:
+                name: "Friend_screen"
+                BoxLayout:
+                    orientation:'vertical'
+                    MDTopAppBar:
+                        title: "Friends"
+                        specific_text_color: gch("#FFFFFF")
+                        left_action_items: [["menu", lambda x : navigation_drawer.set_state()]]
+                    MDLabel:
+                        text: "Under Construction.\n Available in next release"
+                        halign: "center"
+
+            Screen_formulas_2d:
+                name: "screen2d"
+            Screen_about:
+                name: "about"
+            Screen_formulas_3d:
+                name: "screen3d"
+        MDNavigationDrawer:
+            id: navigation_drawer
+            opening_time: 0.5
+            closing_time: 0.4
+            enable_swiping: True
+            #type: "standard"
+            status: "opening_with_swipe"
+            BoxLayout:
+                orientation: 'vertical'
+                padding: dp(8)
+                spacing: dp(8)
+                AnchorLayout:
+                    size_hint_y: .7
+                    Image:
+                        id: avatar
+                        source: 'nav_photo.png'
+                MDLabel:
+                    text:"J. A. N. "
+                    font_style: "Button"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                MDLabel:
+                    text: "j.a.n.year29102021.age15@gmail.com"
+                    font_style: "Caption"
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                ScrollView:
+                    MDList:
+                        OneLineIconListItem:
+                            text: 'Home'
+                            halign: 'right'
+                            on_release:
+                                screen_manager.current = "mainscreen"
+                                navigation_drawer.set_state("close")
+                            IconLeftWidget:
+                                icon: "home"
+
+                        OneLineIconListItem:
+                            text: 'Loving Friendz'
+                            on_release:
+                                screen_manager.current = "Friend_screen"
+                                navigation_drawer.set_state("close")
+                                
+                        OneLineIconListItem:
+                            text: 'About'
+                            on_release:
+                                screen_manager.current = "about"
+                                navigation_drawer.set_state("close")
+                            IconLeftWidget:
+                                icon: 'information-outline'
+                        OneLineIconListItem:
+                            text: 'Formulas-2D'
+                            icon: 'information-outline'
+                            on_release:
+                                screen_manager.current = "screen2d"
+                                navigation_drawer.set_state("close")
+                        OneLineIconListItem:
+                            text: 'Formulas-3D'
+                            on_release:
+                                screen_manager.current = "screen3d"
+                                navigation_drawer.set_state("close")
+
+                            
+<TriangleWindow>:
+    name:"Triangle"
+    BoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Triangle"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation:'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .45,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<EquilateralTriangleWindow>:
+    name: "EquilateralTriangle"
+    BoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            title: "Equilateral Triangle"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RightTriangleWindow>:
+    name: "RightTriangle"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Right Triangle"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Hypotenuse  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: hypotenuse_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<IsoscelesTriangleWindow>:
+    name: "IsoscelesTriangle"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Isosceles Triangle"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Side  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<ScaleneTriangleWindow>:
+    name: "ScaleneTriangle"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Scalene Triangle"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-3  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side3_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                            
+<QuadrilateralWindow>:
+    name: "Quadrilateral"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Quadrilateral"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Large diagonal  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: large_dia_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Small diagonal - 1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: small_dia_1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Small diagonal - 2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: small_dia_2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                            
+<RectangleWindow>:
+    name: "Rectangle"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Rectangle"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Length  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lenght_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Width  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: width_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Diagonal  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: diagonal_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                            
+<SquareWindow>:
+    name: "Square"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Square"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RhombusWindow>:
+    name: "Rhombus"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Rhombus"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Diagonal-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: dia_1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Diagonal-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: dia_2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Side  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<KiteWindow>:
+    name: "Kite"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Kite"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Diagonal-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: dia_1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Diagonal-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: dia_2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<ParallelogramWindow>:
+    name: "Parallelogram"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Parallelogram"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                            
+<TrapeziumWindow>:
+    name: "Trapezium"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Trapezium"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Parallel side - 1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: par_1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Parallel side - 2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: par_2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_1_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Side-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_2_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                MDLabel:
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'x': .999,  'center_y': .5}
+                    on_release: root.queans()
+                MDLabel:
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(50)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                            
+<RegularPentagonWindow>:
+    name: "RegularPentagon"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Regular Pentagon"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Diagonal  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: diagonal_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RegularHexagonWindow>:
+    name: "RegularHexagon"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Regular Hexagon"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RegularHeptagonWindow>:
+    name: "RegularHeptagon"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Regular Heptagon"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RegularOctagonWindow>:
+    name: "RegularOctagon"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Regular Octagon"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RegularNonagonWindow>:
+    name: "RegularNonagon"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Regular Nonagon"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RegularDecagonWindow>:
+    name: "RegularDecagon"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Regular Decagon"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        row_default_width: dp(145)
+                        MDLabel:
+                            text: 'Side  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            size_hint_x:None
+                            width: dp(145)
+                        MDTextField:
+                            id: side_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            input_type: "number"
+                            input_filter: "float"
+                            size_hint_x: None
+                            width :dp(145)
+                            on_text_validate: root.queans()
+                        
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    pos_hint: {'center_x': 1,  'top': 1}
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: area_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Perimeter  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: perimeter_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+
+
+<CubeWindow>:
+    name: "Cube"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Cube"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: edge_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Diagonal  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: diagonal_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+
+<CuboidWindow>:
+    name: "Cuboid"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Cuboid"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Length  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: length_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Breadth  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: breath_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Diagonal  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: diagonal_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<TriangularPrismWindow>:
+    name: "TriangularPrism"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Triangular Prism"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge of triangle base-1  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_1_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Edge of triangle base-2  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_2_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Edge of triangle base-3  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_3_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of base  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<TriangularPyramidWindow>:
+    name: "TriangularPyramid"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Triangular Pyramid"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Area of base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_base_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Perimeter of base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: pr_base_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Slant height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: sl_height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<SquarePyramidWindow>:
+    name: "SquarePyramid"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Square Pyramid"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge of the base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of base is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of face is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_face_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<RectanglePyramidWindow>:
+    name: "RectangularPyramid"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Rectangular Pyramid"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Lenght of the base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: length_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Breadth of the base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: breath_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of base is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<PentagonalPyramidWindow>:
+    name: "PentagonalPyramid"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Pentagonal Pyramid"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge of the base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of base is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of face is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_face_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<HexagonalPyramidWindow>:
+    name: "HexagonalPyramid"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Hexagonal Pyramid"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge of the base  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+                        MDLabel:
+                            text: 'Height  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'L.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: lsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of base is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_base_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of fase is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_face_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<TetrahedronWindow>:
+    name: "Tetrahedron"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Tetrahedron"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Area of fase is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: ar_face_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'Height is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: height_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<OctahedronWindow>:
+    name: "Octahedron"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Octahedron"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<DodecahedronWindow>:
+    name: "Dodecahedron"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Dodecahedron"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+<IcosahedronWindow>:
+    name: "Icosahedron"
+    BoxLayout:
+        orientation: 'vertical'
+        MDTopAppBar:
+            title: "Icosahedron"
+            left_action_items: [['arrow-left', lambda x: root.manager.change_screen_for_shapes("MainScreen")]]
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: '3dp'
+            spacing: '10dp'
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(10)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Edge  :'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: side_value
+                            halign: "auto"
+                            multiline: False
+                            color_mode: "accent"
+                            input_type: "number"
+                            size_hint_y: None
+                            input_filter: "float"
+                            on_text_validate: root.queans()
+            BoxLayout:
+                size_hint: 1, 0.4
+                orientation: "horizontal"
+                MDLabel:
+                    text: ""
+                MDFloatingActionButton:
+                    icon: "arrow-down"
+                    on_release: root.queans()
+                MDLabel:
+                    text: ""
+            ScrollView:
+                always_overscroll:False
+                do_scroll_x:False
+                size_hint: 1,2
+                GridLayout:
+                    size_hint_y:None
+                    height:self.minimum_height
+                    size:self.minimum_size
+                    spacing:dp(10)
+                    cols:1
+                    MDGridLayout:
+                        row_default_height:dp(75)
+                        size_hint_y:None
+                        height:self.minimum_height
+                        size:self.minimum_size
+                        cols:2
+                        MDLabel:
+                            text: 'Volume  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: volume_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+                        MDLabel:
+                            text: 'T.S.A  is'
+                            size_hint_y: None
+                            height:dp(60)
+                            halign: "center"
+                            width: dp(85)
+                        MDTextField:
+                            id: tsa_value
+                            size_hint_y:None
+                            color_mode: "accent"
+                            halign: "auto"
+                            multiline: False
+                            disabled: True
+
+
